@@ -59,8 +59,8 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            height: 300px;
-            margin-top: 40px;
+            height: 250px;
+            margin-top: 10px;
             width: 100%;
         }
 
@@ -165,10 +165,8 @@
         }
 
         .plea-message {
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            margin: 20px auto 20px;
             font-size: 1.1em;
             color: #d4578f;
             font-weight: bold;
@@ -178,7 +176,10 @@
             text-align: center;
             z-index: 5;
             width: 90%;
-            white-space: nowrap;
+            min-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .plea-message.show {
@@ -187,10 +188,10 @@
         }
 
         @keyframes fadeInOut {
-            0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-            15% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            85% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+            0% { opacity: 0; transform: translateY(-5px); }
+            15% { opacity: 1; transform: translateY(0); }
+            85% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-5px); }
         }
 
         .message-popup {
@@ -334,13 +335,12 @@
             
             .plea-message {
                 font-size: 1em;
-                top: -30px;
-                width: 95%;
+                margin: 15px auto;
+                min-height: 25px;
             }
             
             #questionSection {
                 position: relative;
-                padding-top: 40px;
             }
         }
     </style>
@@ -457,7 +457,7 @@
             "Pretty please? 💕",
             "You're making this hard 😅",
             "Think about it!",
-            "One chance, that's all I ask!"
+            "Why not give it a try? 😊"
         ];
 
         let lastMessageIndex = -1;

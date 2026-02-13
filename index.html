@@ -166,10 +166,10 @@
 
         .plea-message {
             position: absolute;
-            top: 20px;
+            top: -50px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #d4578f;
             font-weight: bold;
             opacity: 0;
@@ -177,6 +177,8 @@
             transition: opacity 0.3s ease;
             text-align: center;
             z-index: 5;
+            width: 90%;
+            white-space: nowrap;
         }
 
         .plea-message.show {
@@ -329,6 +331,17 @@
             .success-message p {
                 font-size: 1.1em;
             }
+            
+            .plea-message {
+                font-size: 1em;
+                top: -40px;
+                width: 95%;
+            }
+            
+            #questionSection {
+                position: relative;
+                padding-top: 50px;
+            }
         }
     </style>
 </head>
@@ -473,6 +486,9 @@
         noButton.addEventListener('touchstart', (e) => {
             e.preventDefault();
             moveButton();
+        });
+        noButton.addEventListener('touchmove', (e) => {
+            e.preventDefault();
         });
 
         // Confetti effect

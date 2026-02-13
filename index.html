@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Will you be my Valentine? 💕</title>
     <style>
         * {
@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #ffd1dc 0%, #e6d5f0 50%, #fff9e6 100%);
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
@@ -259,9 +259,49 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            button { padding: 15px 35px; font-size: 1.2em; }
-            .container { padding: 40px 20px; }
+            h1 { 
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+            
+            .container {
+                padding: 40px 20px;
+                max-width: 95%;
+            }
+            
+            button { 
+                padding: 15px 40px; 
+                font-size: 1.2em; 
+            }
+            
+            .buttons-container {
+                height: 250px;
+            }
+            
+            .envelope-icon {
+                font-size: 4em;
+            }
+            
+            .message-popup {
+                padding: 30px 20px;
+                max-width: 90%;
+            }
+            
+            .message-popup h3 {
+                font-size: 1.5em;
+            }
+            
+            .message-popup p {
+                font-size: 0.95em;
+            }
+            
+            .success-message h2 {
+                font-size: 2em;
+            }
+            
+            .success-message p {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>

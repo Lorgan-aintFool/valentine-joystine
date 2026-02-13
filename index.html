@@ -166,7 +166,7 @@
 
         .plea-message {
             position: absolute;
-            top: -50px;
+            top: -35px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 1.1em;
@@ -183,13 +183,13 @@
 
         .plea-message.show {
             opacity: 1;
-            animation: fadeInOut 2s ease;
+            animation: fadeInOut 3s ease;
         }
 
         @keyframes fadeInOut {
             0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-            20% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            85% { opacity: 1; transform: translateX(-50%) translateY(0); }
             100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
         }
 
@@ -334,13 +334,13 @@
             
             .plea-message {
                 font-size: 1em;
-                top: -40px;
+                top: -30px;
                 width: 95%;
             }
             
             #questionSection {
                 position: relative;
-                padding-top: 50px;
+                padding-top: 40px;
             }
         }
     </style>
@@ -461,9 +461,15 @@
         ];
 
         let lastMessageIndex = -1;
+        let messageTimeout;
 
         function showPleaMessage() {
             const pleaMessage = document.getElementById('pleaMessage');
+            
+            // Clear any existing timeout
+            if (messageTimeout) {
+                clearTimeout(messageTimeout);
+            }
             
             // Get a different message than the last one
             let randomIndex;
@@ -474,11 +480,16 @@
             lastMessageIndex = randomIndex;
             
             pleaMessage.textContent = pleaMessages[randomIndex];
+            pleaMessage.classList.remove('show');
+            
+            // Force reflow to restart animation
+            void pleaMessage.offsetWidth;
+            
             pleaMessage.classList.add('show');
             
-            setTimeout(() => {
+            messageTimeout = setTimeout(() => {
                 pleaMessage.classList.remove('show');
-            }, 2000);
+            }, 3000);
         }
 
         noButton.addEventListener('mouseenter', moveButton);
